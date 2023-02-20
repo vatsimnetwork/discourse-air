@@ -1,0 +1,6 @@
+@each $group, $color in $vatsim-group-colors {
+  .names .group--#{$group} a {
+    color: #{$color};
+  }
+}
+

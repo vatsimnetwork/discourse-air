@@ -537,35 +537,4 @@ html body #main-outlet {
   box-shadow: none;
 }
 
-.names span.group--Tech a {
-    color: #DC2E17;
-}
-
-.names span.group--Staff a {
-    color: #DC2E17;
-}
-
-.names span.group--BoG a {
-    color: #DC2E17;
-}
-
-.names span.group--Supervisor a {
-    color: #DC2E17;
-}
-
-.names span.group--vatsim_staff a {
-    color: #DC2E17;
-}
-
-.names span.group--community_team a {
-    color: #DC2E17;
-}
-
-.names span.group--VSOA a {
-    color: #DC2E17;
-}
-
-.names span.group--virtualairline a {
-    color: #DC2E17;
-}
-
+@import "vatsim";
