@@ -1,20 +1,42 @@
 .mobile-view {
-  .subcategory-list {
+  // Remove background
+  .categories-list .list-controls {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+  }
 
-    .parent-category {
-      display: inline-block;
-      padding: 6px 12px;
-      background-color: var(--secondary);
-      border-radius: 0.5em;
+  // Add a background to this
+  .subcategory-list .parent-category {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: var(--secondary);
+    border-radius: 0.5em;
+  }
+
+  .category-list-item.category {
+    // Style fixes
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    outline: 1px solid var(--secondary);
+
+    // Missing from category page
+    // Discourse mobile/topic-list.scss scopes these under .categories-list .category-list
+    tbody {
+      border-top: none;
     }
 
-    .category-list-item {
-      background-color: var(--secondary);
-      border-top: 0 !important;
-      border-bottom: 0 !important;
-      outline: 1px solid var(--secondary);
-      border-radius: 12px;
+    th {
+      padding: 10px 0 0;
     }
 
+    td {
+      padding: 12px 5px;
+      color: var(--primary-med-or-secondary-high);
+    }
+
+    td:first-of-type {
+      padding-left: 10px;
+    }
   }
 }
