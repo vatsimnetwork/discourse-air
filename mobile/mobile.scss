@@ -11,7 +11,17 @@
 }
 
 html
-  body:not(.static-tos):not(.static-faq):not(.static-privacy):not(.about-page):not(.static-faq):not(.badges-page):not(.tags-page):not(.archetype-banner):not(.archetype-regular):not(.archetype-private_message):not(.admin-interface):not(.edit-category):not(.user-summary-page):not(.user-activity-page):not(.user-invites-page):not(.user-preferences-page)
+  body:not(.static-tos):not(.static-faq):not(.static-privacy):not(
+    .about-page
+  ):not(.static-faq):not(.badges-page):not(.tags-page):not(
+    .archetype-banner
+  ):not(.archetype-regular):not(.archetype-private_message):not(
+    .admin-interface
+  ):not(.edit-category):not(.user-summary-page):not(.user-activity-page):not(
+    .user-invites-page
+  ):not(.user-preferences-page):not(.user-messages-page):not(
+    .user-notifications-page
+  ):not(.user-badges-page)
   #main-outlet {
   width: calc(100% - 1em);
   padding: 0em 0.5em 1em 0.5em;
@@ -19,7 +29,13 @@ html
   background-color: transparent;
 }
 
+html body #main-outlet .docs {
+  padding: 1em;
+  background-color: var(--secondary);
+}
+
 html body.static-tos #main-outlet,
+html body.no-ember #main-outlet,
 html body.static-privacy #main-outlet,
 html body.about-page #main-outlet,
 html body.static-faq #main-outlet,
@@ -33,6 +49,9 @@ html body.user-summary-page #main-outlet,
 html body.user-activity-page #main-outlet,
 html body.user-invites-page #main-outlet,
 html body.user-preferences-page #main-outlet,
+html body.user-messages-page #main-outlet,
+html body.user-notifications-page #main-outlet,
+html body.user-badges-page #main-outlet,
 html body.staff:not(.navigation-topics) #main-outlet {
   border-radius: 0px;
   width: calc(100% - 3em);
@@ -62,6 +81,12 @@ body.category .navigation-categories .list-container,
 
 ol.category-breadcrumb {
   margin-top: 1em;
+}
+
+.categories-list .list-controls {
+  background: var(--secondary);
+  padding: 0.5em;
+  border-radius: 8px;
 }
 
 .list-controls .nav-pills {
@@ -175,4 +200,22 @@ ol.category-breadcrumb {
 .topic-list .topic-list-header .topic-list-data,
 .topic-list .topic-list-item .topic-list-data {
   padding: 15px;
+}
+
+// default category list styles when the modern category boxes theme component isn't used
+
+.category-list-item.category {
+  background: var(--secondary);
+  border-radius: 1em;
+  tbody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  td {
+    width: 100%;
+  }
+  .num.posts {
+    padding-right: 0.25em;
+  }
 }

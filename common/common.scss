@@ -150,6 +150,10 @@
   }
 }
 
+.not-found-container {
+  background-color: var(--secondary);
+}
+
 input[type="text"],
 input[type="password"],
 input[type="datetime"],
@@ -247,7 +251,7 @@ div.ac-wrap {
 }
 
 html {
-  body {
+  body:not(.no-ember) {
     background: linear-gradient(
         0deg,
         rgba(var(--primary-rgb), 0.075) 0%,
@@ -267,6 +271,9 @@ html {
       var(--tertiary) 100%
     );
     clip-path: ellipse(148% 70% at 91% -14%);
+  }
+  body.no-ember .background-container {
+    display: none;
   }
 }
 
@@ -297,6 +304,23 @@ html body #main-outlet {
 .nav-pills:not(.user-nav) > li a.active,
 .nav-pills:not(.user-nav) > li > a {
   border-radius: 0.5em;
+}
+
+.category-calendar {
+  &.before-topic-list-body-outlet {
+    display: block;
+  }
+  background: var(--secondary);
+  padding: 1em;
+  border-radius: 8px;
+  margin-bottom: 1em;
+}
+
+.discourse-post-event-upcoming-events {
+  background: var(--secondary);
+  border-radius: 8px;
+  padding: 1em;
+  margin-bottom: 1em;
 }
 
 // Topic List
@@ -533,7 +557,6 @@ html body #main-outlet {
 }
 
 .quote-button {
-  background-color: var(--primary-low-mid);
   border-radius: 0.5em;
 }
 
@@ -557,6 +580,10 @@ html body #main-outlet {
 
 .topic-list .main-link.focused {
   box-shadow: none;
+}
+
+.title-voting {
+  padding-left: 14px;
 }
 
 @import "vatsim";
