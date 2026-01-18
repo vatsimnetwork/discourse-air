@@ -2,6 +2,7 @@ html body.has-sidebar-page.has-full-page-chat {
   #main-outlet-wrapper {
     gap: 2em;
   }
+
   #main-outlet {
     padding-bottom: 0 !important;
   }
@@ -12,7 +13,7 @@ html body.has-sidebar-page.has-full-page-chat {
 }
 
 .chat-channel {
-  height: calc(100vh - (var(--header-offset) + 10em));
+  height: calc(100vh - (var(--header-offset) + 7.85em));
 }
 
 .c-navbar-container {
@@ -29,13 +30,14 @@ html body.has-sidebar-page.has-full-page-chat {
 
 .has-full-page-chat #main-outlet.wrap {
   margin-bottom: 30px;
-  padding-bottom: 0px !important;
+  padding-bottom: 0 !important;
+
   .full-page-chat {
     grid-template-rows: calc(var(--full-page-chat-height) - 50px);
   }
 }
 
-@media screen and (max-width: 1366px) {
+@media screen and (width <= 1366px) {
   .has-full-page-chat #main-outlet {
     width: 100%;
   }
@@ -46,6 +48,7 @@ html body.has-sidebar-page.has-full-page-chat {
     border-radius: 0;
     margin: 0;
     padding: 0;
+
     .full-page-chat {
       grid-template-rows: var(--full-page-chat-height);
     }
