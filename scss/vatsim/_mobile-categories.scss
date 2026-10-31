@@ -1,4 +1,6 @@
-.mobile-view {
+@use "lib/viewport";
+
+@include viewport.until(sm) {
   // Remove background
   .categories-list .list-controls {
     background: none;
